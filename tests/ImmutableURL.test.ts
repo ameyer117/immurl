@@ -1,4 +1,4 @@
-import { ImmutableURL, ImmutableURLSearchParams } from '../lib/immurl';
+import { ImmutableURL, ImmutableURLSearchParams } from '../lib/immutable-url';
 import { URL_PROPERTIES } from '../lib/constants';
 import flatMap from 'lodash/flatMap';
 

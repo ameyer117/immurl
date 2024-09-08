@@ -1,14 +1,18 @@
-# immurl
+# immutable-url
 
 🔗 A tiny (< 500B), 0-dependency, immutable URL library, backed by the native whatwg URL. 🎉 Now with immutable `Headers` support!
+
+## Credits
+
+This library is maintained fork of [immutable-url](https://github.com/tom-sherman/immurl) by [Tom Sherman](https://github.com/tom-sherman).
 
 ## Install
 
 ```
-npm install immurl
+npm install immutable-url
 ```
 
-Because immurl uses the native whatwg URL API under the hood you'll need a polyfill to support environments that [don't implement this API](https://developer.mozilla.org/en-US/docs/Web/API/URL#Browser_compatibility) eg. IE11.
+Because immutable-url uses the native whatwg URL API under the hood you'll need a polyfill to support environments that [don't implement this API](https://developer.mozilla.org/en-US/docs/Web/API/URL#Browser_compatibility) eg. IE11.
 
 ## Usage
 
@@ -17,7 +21,7 @@ Because immurl uses the native whatwg URL API under the hood you'll need a polyf
 `ImmutableURL` works as you expect, it contains all of the properties of the native [URL API](https://developer.mozilla.org/en-US/docs/Web/API/URL).
 
 ```typescript
-import { ImmutableURL } from 'immurl';
+import { ImmutableURL } from 'immutable-url';
 
 const url = new ImmutableURL('https://example.com');
 
@@ -34,12 +38,12 @@ newUrl = url.set('pathname', '/bar').set('hash', '#heading'); // https://example
 
 ### `ImmutableURLSearchParams`
 
-immurl also contains an immutable version of the [`URLSearchParams` API](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams); `ImmutableURLSearchParams`.
+immutable-url also contains an immutable version of the [`URLSearchParams` API](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams); `ImmutableURLSearchParams`.
 
 The API for `ImmutableURLSearchParams` is exactly the same as the native version except the methods that usually mutate (`.append()`, `.delete()`, `.sort()`) return a new `ImmutableURLSearchParams` instance.
 
 ```typescript
-import { ImmutableURLSearchParams } from 'immurl';
+import { ImmutableURLSearchParams } from 'immutable-url';
 
 let params = new ImmutableURLSearchParams('q=URLUtils.searchParams&topic=api');
 
@@ -74,7 +78,7 @@ const newUrl2 = url.set(
 Not strictly related to whatg URLs, but it's shoehorned in here because it's kinda related and they're usually used together.
 
 ```typescript
-import { ImmutableHeaders } from 'immurl';
+import { ImmutableHeaders } from 'immutable-url';
 
 const headers = new ImmutableHeaders({
   foo: 'bar'
@@ -85,7 +89,3 @@ const newHeaders = headers.set('foo', 'fuz');
 console.log(headers.get('foo')); // Logs "bar"
 console.log(newHeaders.get('foo')); // Logs "fuz"
 ```
-
-## API
-
-See the docs at https://immurl.netlify.app/

@@ -1,4 +1,4 @@
-import { ImmutableURLSearchParams } from '../lib/immurl';
+import { ImmutableURLSearchParams } from '../lib/immutable-url';
 
 /**
  * Array of search params defined without the leading ?

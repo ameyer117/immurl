@@ -1,12 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "strict": true,
+    "target": "es2022", //Compile target
+    "lib": ["es2022", "DOM", "DOM.Iterable"], //Tell TypeScript what built-in types to include
     "esModuleInterop": true,
+    "module": "NodeNext",
+    "strict": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true
   }
 }

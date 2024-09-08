@@ -1,6 +1,6 @@
-import { ImmutableHeaders } from '../lib/immurl';
+import { ImmutableHeaders } from '../lib/immutable-url';
 
-describe.each([
+const testHeaders: HeadersInit[] = [
   {
     foo: '1',
     bar: '2',
@@ -13,7 +13,9 @@ describe.each([
     foo: '1',
     bar: '2',
   }),
-])('equivalent to the native Headers object for input %p', (input) => {
+];
+
+describe.each(testHeaders)('equivalent to the native Headers object for input %p', (input) => {
   test('entries()', () => {
     const immutable = new ImmutableHeaders(input);
     const headers = new Headers(input);
